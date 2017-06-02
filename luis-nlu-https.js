@@ -2,6 +2,7 @@ var https = require('https');
 
 var url = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8db8e9d5-5b6f-43d7-8293-9bb26693803b?subscription-key=9f060b5692ab4929b84002fff1d81ea1&staging=true&verbose=true&timezoneOffset=-300"
 
+
 function query(q) {
     return new Promise((resolve, reject) => {
         if (!q) {
@@ -9,6 +10,7 @@ function query(q) {
             return;
         }
 
+        
         https.get(url + '&q=' + q, function(response) {
             var finalData = "";
 
@@ -50,6 +52,7 @@ function printOnSuccess(response) {
         if(!response.dialog.isFinished()) {
             console.log("Dialog Parameter Name: " + response.dialog.parameterName);
             console.log("Dialog Prompt: " + response.dialog.prompt);
+            
         }
     }
 };
