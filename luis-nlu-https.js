@@ -30,6 +30,7 @@ function query(q) {
                     resolve(response.topScoringIntent.intent);
                 } else {
                     resolve(null);
+                    
                 }
             });
         });
